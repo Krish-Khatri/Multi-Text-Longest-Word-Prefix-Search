@@ -1,8 +1,6 @@
-# Spring_cs300_project
-
 Git Repository for project files
 
-## All commands and code have been tested on cs426.ua.edu
+## All commands and code have been tested
 
 - Set up JAVA_HOME environment variable
 
@@ -49,30 +47,5 @@ Git Repository for project files
 ## Commands to check/delete message queues
 
 - Determine the status of your message queue via `ipcs -a`
------- Message Queues --------
-key        msqid      owner      perms      used-bytes   messages    
-0x0d03bc96 0          crimson2    666        0            0           
-0xffffffff 98305      crimson3 666        0            0           
-0x0303fabb 65538      crimson1   666        0            0           
-**0x0c030904 131075     anderson   666        8            1**           
------- Shared Memory Segments --------
-key        shmid      owner      perms      bytes      nattch     status      
------- Semaphore Arrays --------
-key        semid      owner      perms      nsems     
-
-*0x0C030904 is the queue created by `./msgsnd con`.  It has 1 message of 8 bytes.
-
 - Removes the queue along with any messages `ipcrm -Q 0x0c030904`
------- Message Queues --------
-key        msqid      owner      perms      used-bytes   messages    
-0x0d03bc96 0          crimson2    666        0            0           
-0xffffffff 98305      crimson3    666        0            0           
-0x0303fabb 65538      crimson1    666        0            0           
 
------- Shared Memory Segments --------
-key        shmid      owner      perms      bytes      nattch     status      
------- Semaphore Arrays --------
-key        semid      owner      perms      nsems 
-
-
->Note:  If your queue key is 0x0xffffffff, you must follow the directions to create the queue file in your home directory and update queue_ids.h
